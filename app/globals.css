@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{ --radius:1rem }
+html,body{ height:100% }
+body{ @apply bg-gray-50 text-sm }
+.card{ @apply bg-white rounded-xl shadow-sm }
+.media-tile{ @apply relative rounded-lg overflow-hidden border border-gray-200 }
+.media-blur{ filter: blur(8px) }
+.safe-bottom{ padding-bottom: calc(env(safe-area-inset-bottom) + 64px) } /* space for bottom nav */
+.sticky-header{ position: sticky; top: 0; z-index: 40 }
+.bottom-nav-safe{ padding-bottom: env(safe-area-inset-bottom) }
+.tap{ @apply active:opacity-80 transition }
+.touch-manipulation{ touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+
+/* Consistent typography */
+h1 { @apply text-base font-bold }
+h2 { @apply text-sm font-semibold }
+h3 { @apply text-sm font-medium }
+p { @apply text-sm }
+label { @apply text-xs font-medium }
+
+/* Safari iOS input height fix */
+@supports (-webkit-touch-callout: none) {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="file"],
+  select,
+  textarea {
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select {
+    height: 2.25rem;
+    min-height: 2.25rem;
+  }
+}

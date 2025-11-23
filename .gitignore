@@ -1,0 +1,9 @@
+node_modules/*
+.next/*
+others
+*.zip
+_MACOSX/
+.DS_Store
+*.env
+*md
+DEPLOYMENT_STATUS.md
